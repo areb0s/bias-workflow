@@ -1,0 +1,27 @@
+{
+  "name": "bias-workflow",
+  "version": "0.1.0",
+  "description": "A contract-first coding workflow for Pi",
+  "private": true,
+  "keywords": [
+    "pi-package",
+    "pi",
+    "skill",
+    "workflow"
+  ],
+  "files": [
+    "skills",
+    "README.md"
+  ],
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  },
+  "scripts": {
+    "check": "npm pack --dry-run"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}
