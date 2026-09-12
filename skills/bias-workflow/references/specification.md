@@ -2,6 +2,17 @@
 
 The specification defines what must be true for the request to be complete. It is a behavioral contract, not an implementation plan.
 
+## Review prior specification feedback
+
+When related completion reports or user-provided feedback are available, review their specification feedback before drafting the next contract. Do not assume feedback was persisted or recoverable; its absence does not block ordinary specification work or justify inventing a retrospective.
+
+- Check each relevant proposal against the current request, code, and observed evidence. Preserve its task context and applicability conditions rather than treating it as a universal rule.
+- State which proposals are incorporated, deferred pending evidence or a user answer, or excluded, with a brief reason and a reference to the originating feedback. Keep this note concise; omit it when no relevant feedback is available.
+- Incorporate supported changes into the appropriate goal, behavior, constraint, acceptance criterion, or non-goal. Carry unresolved questions into evidence gaps or return to concretization when they require a consequential user decision.
+- Preserve effective criteria and explicit user constraints. Feedback cannot override the user's current intent, silently amend an approved specification, or lower the bar merely because an implementation failed.
+
+The resulting specification and implementation plan still require the existing combined approval. Reviewing feedback does not authorize implementation, automatically adopt a rule, or require another execution cycle.
+
 ## Required sections
 
 ### Goal

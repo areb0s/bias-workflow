@@ -49,6 +49,23 @@ Mark the work complete only when:
 - required documentation and tests match current behavior;
 - residual risks and evidence gaps are disclosed.
 
+## Specification feedback
+
+After verification and the completion decision, evaluate the specification itself against the observed result, not only whether the implementation passed it. Use this bounded loop: evaluation → unresolved questions → proposed changes for the next specification.
+
+Include `명세 피드백` in the report, whether the work is complete or blocked:
+
+- **Keep:** goals, constraints, and acceptance criteria supported by the outcome.
+- **Discoveries:** omissions or ambiguities exposed by the result, citing the affected requirement and observed evidence. Separate observations from causal hypotheses.
+- **Open questions:** what remains unknown and what evidence or user answer would resolve it. Unverified guesses are questions, not new requirements.
+- **Next specification proposal:** the specific item to keep, revise, add, or remove, its reason, and the conditions under which it applies. Preserve effective criteria rather than rewriting the entire specification.
+
+Distinguish required corrections to the current work from optional proposals for subsequent work. An unmet current criterion remains a blocker; feedback cannot turn it into a future improvement and declare completion. Never weaken a criterion to make failed verification pass. New user or product choices follow the existing return-to-stage and combined-approval rules.
+
+Feedback is a proposal, not an amendment to the approved contract or permission to execute another iteration. Preserve user intent and constraints. If no evidence supports a change, report `변경 제안 없음`; routine work may use that single line rather than filling empty sections. Do not invent lessons or demand another cycle.
+
+Keep feedback in the existing completion report, tied to the task and its verification evidence. This skill does not create a new memory store, automatically persist rules, or start another run. When relevant feedback is available during a later specification, follow the feedback review in [Specification](specification.md).
+
 ## Completion report
 
 Use distinct sections:
@@ -65,6 +82,10 @@ Use distinct sections:
 
 ## 완료 판정
 - Complete or blocked, with reason
+
+## 명세 피드백
+- Keep, discoveries, open questions, and next specification proposal
+- Or: 변경 제안 없음, with a brief reason
 
 ## Git 상태
 - Working-tree changes

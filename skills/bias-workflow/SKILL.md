@@ -52,6 +52,7 @@ Read the matching reference before performing each stage:
 10. If implementation reveals a material new assumption, stop and return to the affected stage rather than silently expanding scope.
 11. Connect every completion claim to observed verification evidence.
 12. Report implementation, verification, completion, staging, commit, and push as separate facts.
+13. After verification, report evidence-based specification feedback using the completion reference. Review relevant available feedback when drafting a later specification; proposals never silently amend the approved contract.
 
 ## Material discoveries
 
@@ -60,6 +61,12 @@ Return to concretization when a new user or product decision is required. Return
 Return to planning when the contract remains valid but the approved owner, files, symbols, data flow, state changes, or validation approach must materially change.
 
 After either return, present a revised specification-plan pair and request one new combined approval.
+
+## Result-to-specification feedback
+
+Alongside the completion decision, evaluate what the observed result teaches about the specification: what to preserve, what was missing or ambiguous, what remains unknown, and what to propose for the next specification. [Completion](references/completion.md) owns this feedback; [Specification](references/specification.md) owns its review and incorporation when relevant feedback is available.
+
+This is a feedback path, not an automatic execution loop. Keep current blockers distinct from future improvements, preserve user intent, and use the existing combined approval for a revised specification-plan pair. Do not add a score gate, memory store, or mandatory change when evidence supports keeping the specification.
 
 ## Output labels
 
@@ -73,4 +80,5 @@ Use explicit labels so proposals are not confused with completed work:
 - `수정 완료`
 - `검증`
 - `완료 판정`
+- `명세 피드백`
 - `Git 상태`
