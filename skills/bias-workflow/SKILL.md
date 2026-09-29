@@ -25,7 +25,10 @@ received
 → awaiting_approval
 → implementing
 → verifying
-→ completed
+→ specification_feedback
+  → completed (criteria met; no required correction)
+  → specifying → planning → implementing (in-scope correction; budget remains)
+  → blocked (no improvement, exhausted budget, or unresolved blocker)
 ```
 
 Concretization, specification, and implementation planning are distinct stages. Do not ask for approval between them. Ask once only after both the specification and plan are ready.
@@ -47,26 +50,26 @@ Read the matching reference before performing each stage:
 5. Base the plan on current production code, its canonical owners, callers, consumers, and validation seams.
 6. Present the specification and plan as separate sections in one approval packet.
 7. Do not modify any requested product or deliverable file before approval, including code, tests, documentation, configuration, fixtures, and generated artifacts. Read-only exploration and explicitly requested non-product planning artifacts remain allowed.
-8. Treat approval as applying only to the presented specification-plan pair.
+8. Treat initial approval as covering the presented specification-plan pair and its bounded feedback loop, not unrelated work or expanded authority.
 9. Implement only the approved scope. Do not add speculative state, configuration, helpers, wrappers, exports, fallbacks, or refactors.
-10. If implementation reveals a material new assumption, stop and return to the affected stage rather than silently expanding scope.
+10. Apply evidence-backed in-scope corrections through the feedback loop. If a discovery requires changing the approved goal, scope, explicit constraints, or permissions, stop and return to the affected stage rather than expanding authority.
 11. Connect every completion claim to observed verification evidence.
 12. Report implementation, verification, completion, staging, commit, and push as separate facts.
-13. After verification, report evidence-based specification feedback using the completion reference. Review relevant available feedback when drafting a later specification; proposals never silently amend the approved contract.
+13. After each verification, evaluate specification feedback using the completion reference. Apply supported in-scope corrections to the specification and plan before reimplementation; preserve the iteration's evidence and change reasons.
 
 ## Material discoveries
 
 Return to concretization when a new user or product decision is required. Return to specification when the understood request remains valid but its behavioral contract, scope, or failure policy must change.
 
-Return to planning when the contract remains valid but the approved owner, files, symbols, data flow, state changes, or validation approach must materially change.
+Return to planning when implementation details or validation must change. The initially approved loop permits evidence-backed specification and plan revisions within its approved goal, deliverable scope, explicit constraints, and permissions without per-iteration approval.
 
-After either return, present a revised specification-plan pair and request one new combined approval.
+When a discovery exceeds those boundaries, stop and present a revised specification-plan pair for one new combined approval. The loop is not permission to modify unapproved deliverables or make new user/product choices.
 
 ## Result-to-specification feedback
 
-Alongside the completion decision, evaluate what the observed result teaches about the specification: what to preserve, what was missing or ambiguous, what remains unknown, and what to propose for the next specification. [Completion](references/completion.md) owns this feedback; [Specification](references/specification.md) owns its review and incorporation when relevant feedback is available.
+After verification, evaluate what the observed result teaches about the specification. [Completion](references/completion.md) owns the loop budget, continuation and stop decisions, and compact iteration evidence; [Specification](references/specification.md) owns incorporation into the next contract.
 
-This is a feedback path, not an automatic execution loop. Keep current blockers distinct from future improvements, preserve user intent, and use the existing combined approval for a revised specification-plan pair. Do not add a score gate, memory store, or mandatory change when evidence supports keeping the specification.
+The agent follows this loop within the current request: implementation → verification → specification feedback → necessary specification/plan revision → reimplementation. Initial approval covers at most 30 implementation/verification iterations, including the first. This is skill guidance, not a runtime scheduler or enforced counter. Keep current blockers distinct from optional future improvements. Do not add a score gate, memory store, or mandatory change when evidence supports keeping the specification.
 
 ## Output labels
 

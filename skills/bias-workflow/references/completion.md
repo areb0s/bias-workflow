@@ -2,13 +2,13 @@
 
 ## Implementation
 
-Implement only the approved specification-plan pair.
+Implement the initially approved specification-plan pair or its evidence-backed in-scope successor under the approved feedback loop.
 
 Preserve user work and current ownership boundaries. Reuse the named live references without copying unrelated structure. Do not add speculative abstractions, configuration, fallbacks, or refactors.
 
 Continue autonomously through ordinary imports, type errors, formatting, and equivalent implementation details that do not change the approved contract or plan.
 
-Stop when a material discovery changes behavior, ownership, state, scope, failure policy, target layers, or validation. Return to the affected stage and seek a new combined approval.
+Revise the specification and plan before applying an evidence-backed correction within the approved goal, deliverable scope, explicit constraints, and permissions. Stop and seek a new combined approval when a discovery exceeds those boundaries; the loop does not authorize new user/product choices or unrelated work.
 
 ## Deletion review
 
@@ -51,20 +51,30 @@ Mark the work complete only when:
 
 ## Specification feedback
 
-After verification and the completion decision, evaluate the specification itself against the observed result, not only whether the implementation passed it. Use this bounded loop: evaluation → unresolved questions → proposed changes for the next specification.
+After each verification and before the final completion decision, evaluate the specification itself against the observed result, not only whether the implementation passed it. Feed supported corrections into the next iteration of the same request.
 
 Include `명세 피드백` in the report, whether the work is complete or blocked:
 
 - **Keep:** goals, constraints, and acceptance criteria supported by the outcome.
 - **Discoveries:** omissions or ambiguities exposed by the result, citing the affected requirement and observed evidence. Separate observations from causal hypotheses.
 - **Open questions:** what remains unknown and what evidence or user answer would resolve it. Unverified guesses are questions, not new requirements.
-- **Next specification proposal:** the specific item to keep, revise, add, or remove, its reason, and the conditions under which it applies. Preserve effective criteria rather than rewriting the entire specification.
+- **Next specification change:** the specific item to keep, revise, add, or remove, its reason, and the conditions under which it applies. Distinguish applied in-scope corrections from deferred or out-of-scope proposals. Preserve effective criteria rather than rewriting the entire specification.
 
 Distinguish required corrections to the current work from optional proposals for subsequent work. An unmet current criterion remains a blocker; feedback cannot turn it into a future improvement and declare completion. Never weaken a criterion to make failed verification pass. New user or product choices follow the existing return-to-stage and combined-approval rules.
 
-Feedback is a proposal, not an amendment to the approved contract or permission to execute another iteration. Preserve user intent and constraints. If no evidence supports a change, report `변경 제안 없음`; routine work may use that single line rather than filling empty sections. Do not invent lessons or demand another cycle.
+Initial combined approval authorizes supported in-scope specification and plan corrections followed by reimplementation within the loop below. Preserve user intent and explicit constraints. If no evidence supports a specification change, report `변경 제안 없음`; implementation defects may still need repair against the unchanged criteria. Do not invent lessons or demand another cycle.
 
-Keep feedback in the existing completion report, tied to the task and its verification evidence. This skill does not create a new memory store, automatically persist rules, or start another run. When relevant feedback is available during a later specification, follow the feedback review in [Specification](specification.md).
+### Iteration control (single owner)
+
+- Count the first implementation/verification pass as iteration 1. Allow at most 30 passes for the current request, including that first pass. In-scope specification/plan revisions do not reset the count; ordinary edits or individual test commands are not separate iterations.
+- After verification, choose exactly one outcome:
+  - **Complete:** all completion conditions above hold and feedback identifies no required correction. Stop early; optional improvements do not require another pass.
+  - **Continue:** a required correction has observed evidence, a concrete in-scope next action, and remaining budget. Revise only the affected specification/plan items, then reimplement and reverify. For a pure implementation defect, preserve the specification and correct the implementation. Recheck affected criteria and preserved behavior; retain still-valid prior evidence without presenting it as a fresh test run.
+  - **Blocked:** stop when the latest corrective pass shows no evidence-backed improvement over the preceding pass, iteration 30 ends with required work remaining, or an unresolved blocker leaves no justified in-scope next action. An initial failure alone is not stagnation. Never relabel stagnation, exhaustion, unavailable validation, or an error as success. Boundary changes follow the existing combined-approval rules.
+- Judge improvement by criterion-level evidence, resolved defects, or resolved specification ambiguity—not by rewriting prose or relaxing criteria. Record why continuing is justified; no numeric score gate is required.
+- In the existing work report, retain a compact entry for each pass: iteration number, affected criteria, observed verification evidence/failures, specification/plan changes and reasons (or unchanged), and the continue/complete/blocked decision. Preserve earlier failure evidence; avoid repeating unchanged specifications and logs. Do not claim a reconstructed or unknown count as observed.
+
+These are agent instructions, not runtime enforcement. Do not launch another session, add persistent counters, or create a memory/snapshot store. When feedback is available in a later request, follow [Specification](specification.md); it is evidence, not permission to resume old work.
 
 ## Completion report
 
@@ -81,10 +91,11 @@ Use distinct sections:
 - Evidence and results
 
 ## 완료 판정
-- Complete or blocked, with reason
+- Complete or blocked, with reason and final iteration count (including the initial pass)
 
 ## 명세 피드백
-- Keep, discoveries, open questions, and next specification proposal
+- Keep, discoveries, open questions, and applied/deferred specification changes
+- Compact iteration entries with evidence, change reasons, and decisions
 - Or: 변경 제안 없음, with a brief reason
 
 ## Git 상태
