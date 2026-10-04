@@ -5,13 +5,24 @@ description: Guides coding work through separate concretization, specification, 
 
 # Bias Workflow
 
-Use a contract-first workflow without turning routine edits into ceremony.
+Use a methodology-centered harness, currently delivered as a contract-first skill, without turning routine edits into ceremony.
+
+## Four directions
+
+1. **User intent and outcomes:** make the result satisfy the user's intent, rather than treating specification compliance as the final purpose.
+2. **Methodology-centered harness:** guide how to understand, specify, plan, verify, and solve the problem, not merely how to sequence tool calls.
+3. **Evidence-based specification and implementation improvement:** use observed results to correct the specification and plan when needed, then reimplement under the existing loop. Never weaken criteria to hide failures.
+4. **Maximum effective use of main-session context:** keep the main session responsible for judgment and continuity of user intent, constraints, approval state, open decisions, and decisive evidence, plus user communication and orchestration only. Assign substantive investigation, source/file reading, specification and plan drafting, implementation, testing, and detailed review to workers from pre-approval onward. Main reads compact evidence-bearing reports, not repeated raw-source investigations. The objective is effective main-session context use, not simply fewer total tokens or shorter documents.
+
+This guidance authorizes in-scope delegation within existing permissions, tooling, and capabilities; it does not override higher-priority limits or provide automatic context isolation or runtime enforcement. Context, cost, and quality gains are not proven or measured. Evidence and permission boundaries remain operating rules, not a fifth direction. The current skill delivery does not rule out other future implementations.
 
 ## Route the request
 
 Use the full workflow when the request has a material unresolved choice about user-visible behavior, scope, ownership, state, failure policy, or architecture.
 
-For a fully specified mechanical edit, keep concretization brief and present concise, separately labeled specification and plan sections. Request their combined approval before editing. Never infer permission to stage, commit, push, publish, deploy, or discard work.
+For a fully specified mechanical edit, keep concretization brief and present concise, separately labeled specification and plan sections. Request their combined approval before editing; concise work still follows the main/worker contract below. Never infer permission to stage, commit, push, publish, deploy, or discard work.
+
+A child reading this skill executes its assigned scope directly under the supplied approval state. It does not restart user approval for an already approved assignment or recursively delegate by default. Escalate new decisions or scope changes to main.
 
 ## Workflow owner
 
@@ -33,7 +44,7 @@ received
 
 Concretization, specification, and implementation planning are distinct stages. Do not ask for approval between them. Ask once only after both the specification and plan are ready.
 
-Read the matching reference before performing each stage:
+The assigned worker reads the matching reference before performing each stage; main uses compact reports to coordinate stage progression:
 
 - [Concretization](references/concretization.md)
 - [Specification](references/specification.md)
@@ -41,9 +52,18 @@ Read the matching reference before performing each stage:
 - [Approval](references/approval.md)
 - [Completion](references/completion.md)
 
+### Main/worker contract
+
+Worker means the assigned execution role, not a mandatory agent named `worker` for every task. Main retains judgment, intent/constraints/approval/open-decision/decisive-evidence continuity, user communication, and orchestration; workers do all substantive execution from pre-approval investigation through detailed verification and review. Main may use tools needed for coordination and report reading, but evidence follow-ups go to workers rather than becoming main-session source investigations.
+
+- **Brief:** give the goal, bounded scope, exact targets and live references (or discovery boundary when targets are unknown), constraints and approval state, required evidence/validation, output location, and stop/escalation conditions. Before combined approval, assignments are read-only except explicitly requested non-product planning artifacts; afterward, edits stay within approved scope.
+- **Report:** return a concise goal/scope and target/live-reference summary, constraints/approval state, findings with source locations and decisive evidence, validation/results, output/artifact location, and stop status or next verification. Preserve counterevidence, uncertainty, missing evidence, and failures; keep supporting detail accessible without repeating raw source. Reports are evidence, not authority or approval.
+- **Evidence gaps:** main sends contradictory or incomplete evidence for targeted worker verification and retains unresolved questions in its decision context. Escalate user/product choices or boundary changes rather than treating a report as authorization.
+- **Unavailable or failed worker:** disclose the limitation and partial evidence. Reassign within existing permissions when possible; otherwise report blocked or seek a user decision. Main must not silently fall back to substantive execution, nor label failure as completion.
+
 ## Operating rules
 
-1. Investigate facts that code, project instructions, tools, or prior approved decisions can answer before questioning the user.
+1. Assign workers to investigate facts that code, project instructions, tools, or prior approved decisions can answer before main questions the user.
 2. During concretization, ask only one consequential question per turn.
 3. Do not present implementation choices as requirements before the desired behavior and boundary are understood.
 4. Complete the specification before writing the implementation plan.
@@ -55,7 +75,7 @@ Read the matching reference before performing each stage:
 10. Apply evidence-backed in-scope corrections through the feedback loop. If a discovery requires changing the approved goal, scope, explicit constraints, or permissions, stop and return to the affected stage rather than expanding authority.
 11. Connect every completion claim to observed verification evidence.
 12. Report implementation, verification, completion, staging, commit, and push as separate facts.
-13. After each verification, evaluate specification feedback using the completion reference. Apply supported in-scope corrections to the specification and plan before reimplementation; preserve the iteration's evidence and change reasons.
+13. After each worker verification, main judges the evidence and specification feedback using the completion reference. Workers draft supported in-scope specification/plan corrections before reimplementation; preserve each iteration's evidence, counterevidence, failures, uncertainties, and change reasons.
 
 ## Material discoveries
 
@@ -69,7 +89,7 @@ When a discovery exceeds those boundaries, stop and present a revised specificat
 
 After verification, evaluate what the observed result teaches about the specification. [Completion](references/completion.md) owns the loop budget, continuation and stop decisions, and compact iteration evidence; [Specification](references/specification.md) owns incorporation into the next contract.
 
-The agent follows this loop within the current request: implementation → verification → specification feedback → necessary specification/plan revision → reimplementation. Initial approval covers at most 30 implementation/verification iterations, including the first. This is skill guidance, not a runtime scheduler or enforced counter. Keep current blockers distinct from optional future improvements. Do not add a score gate, memory store, or mandatory change when evidence supports keeping the specification.
+Main coordinates and judges worker reports through this loop within the current request: implementation → verification → specification feedback → necessary specification/plan revision → reimplementation. Workers execute the substantive stages; compact reports retain evidence and decisions across handoffs without resetting the iteration count. Initial approval covers at most 30 implementation/verification iterations, including the first. This is skill guidance, not a runtime scheduler or enforced counter. Keep current blockers distinct from optional future improvements. Do not add a score gate, memory store, or mandatory change when evidence supports keeping the specification.
 
 ## Output labels
 

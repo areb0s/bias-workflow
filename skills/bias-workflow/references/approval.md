@@ -2,6 +2,8 @@
 
 Request approval once, after the specification and implementation plan are both complete.
 
+Under the [main/worker contract](../SKILL.md#mainworker-contract), main presents the worker-grounded packet and tracks the user's approval state. Worker reports cannot grant approval. An assigned child uses the supplied approval state without asking the user to reapprove the same approved scope; it escalates boundary changes to main.
+
 ## Approval packet
 
 Present:

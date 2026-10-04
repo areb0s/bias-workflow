@@ -1,5 +1,7 @@
 # Implementation, Verification, and Completion
 
+Under the [main/worker contract](../SKILL.md#mainworker-contract), workers implement, test, perform detailed reviews, and draft specification feedback. Main judges compact evidence reports, preserves decision/iteration continuity, and communicates completion or blocked status; evidence follow-ups return to workers. Worker failures and unavailable validation remain visible, not grounds for silent main execution or a success claim.
+
 ## Implementation
 
 Implement the initially approved specification-plan pair or its evidence-backed in-scope successor under the approved feedback loop.
@@ -74,7 +76,7 @@ Initial combined approval authorizes supported in-scope specification and plan c
 - Judge improvement by criterion-level evidence, resolved defects, or resolved specification ambiguity—not by rewriting prose or relaxing criteria. Record why continuing is justified; no numeric score gate is required.
 - In the existing work report, retain a compact entry for each pass: iteration number, affected criteria, observed verification evidence/failures, specification/plan changes and reasons (or unchanged), and the continue/complete/blocked decision. Preserve earlier failure evidence; avoid repeating unchanged specifications and logs. Do not claim a reconstructed or unknown count as observed.
 
-These are agent instructions, not runtime enforcement. Do not launch another session, add persistent counters, or create a memory/snapshot store. When feedback is available in a later request, follow [Specification](specification.md); it is evidence, not permission to resume old work.
+These are agent instructions, not runtime enforcement. Do not launch a separate session to restart the loop or reset its budget, add persistent counters, or create a memory/snapshot store. In-scope worker delegation follows the central contract and retains this request's iteration continuity. When feedback is available in a later request, follow [Specification](specification.md); it is evidence, not permission to resume old work.
 
 ## Completion report
 

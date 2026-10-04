@@ -12,7 +12,7 @@ Before asking the user:
 4. Separate observed facts from assumptions.
 5. Answer from evidence anything that does not require user judgment.
 
-Keep this stage read-only.
+Keep this stage read-only. Under the [main/worker contract](../SKILL.md#mainworker-contract), workers perform the investigation and report evidence/gaps; main retains intent and constraints and asks the user about consequential decisions.
 
 ## Clarify one decision at a time
 

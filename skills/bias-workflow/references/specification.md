@@ -2,6 +2,8 @@
 
 The specification defines what must be true for the request to be complete. It is a behavioral contract, not an implementation plan.
 
+Under the [main/worker contract](../SKILL.md#mainworker-contract), workers review source and feedback and draft the contract; main judges the compact evidence-bearing draft against user intent, constraints, and open decisions. Drafts and feedback are evidence, not approval.
+
 ## Review prior specification feedback
 
 When related completion reports or user-provided feedback are available, review their specification feedback before drafting the next contract. Do not assume feedback was persisted or recoverable; its absence does not block ordinary specification work or justify inventing a retrospective.

@@ -2,6 +2,8 @@
 
 The implementation plan maps the completed specification onto current production code. It remains a proposal until the combined approval.
 
+Under the [main/worker contract](../SKILL.md#mainworker-contract), workers read live sources and draft exact ownership, targets, and validation; main judges the evidence-bearing plan and coordinates the approval packet. Planning assignments remain read-only within the pre-approval rules.
+
 ## Investigate current code
 
 Trace the shortest real path from input to observable output. Confirm graph or search findings against current source before naming a target.
