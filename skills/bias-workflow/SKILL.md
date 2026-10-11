@@ -92,6 +92,17 @@ After verification, evaluate what the observed result teaches about the specific
 
 Main coordinates and judges worker reports through this loop within the current request: implementation → verification → specification feedback → necessary specification/plan revision → reimplementation. Workers execute the substantive stages; compact reports retain evidence and decisions across handoffs without resetting the iteration count. Initial approval covers at most 30 implementation/verification iterations, including the first. This is skill guidance, not a runtime scheduler or enforced counter. Keep current blockers distinct from optional future improvements. Do not add a score gate, memory store, or mandatory change when evidence supports keeping the specification.
 
+## User-facing communication
+
+Main owns user-facing communication:
+
+- Keep intermediate messages brief: report meaningful changes or findings, blockers, and decisions needed from the user, not a mini-final report at every stage. Short status can be self-contained; do not suppress essential blockers or approval prompts.
+- Lead the final response with the answer to the user's request, including user-approved scope changes, not the last supplemental investigation or review result.
+- Keep the final response concise and self-contained: include the core outcome, important unresolved matters, corrections, limitations, and relevant evidence or artifact pointers as needed. Do not replay the process or impose a long checklist or template.
+- Treat child completion and reviewer passes as evidence, not satisfaction of the user's request. When blocked or stopped, state what is established and what remains.
+
+Self-check: can the user understand the answer to their request and important unresolved matters from this message alone?
+
 ## Output labels
 
 Use explicit labels so proposals are not confused with completed work:
