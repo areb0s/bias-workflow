@@ -58,6 +58,8 @@ Present:
 
 Keep specification and plan visibly separate even though they share one approval.
 
+When requesting approval, present the full final specification in the conversation, incorporating main’s review and any corrections. Do not replace it with a summary or a link.
+
 ## Approval semantics
 
 Initial approval applies to the presented specification-plan pair and its bounded current-request feedback loop. State in the packet that the loop permits at most 30 implementation/verification iterations including the initial pass, with early success or blocked termination under [Completion](completion.md). Evidence-backed specification and plan corrections within the approved goal, deliverable scope, explicit constraints, and permissions do not require per-iteration approval.
